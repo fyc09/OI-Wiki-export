@@ -59,10 +59,7 @@
 
 #set page(
   fill: none,
-  // header: text(9pt)[
-  //   #counter(page).display("i")
-  //   #h(1fr)
-  // ]
+  margin: (x: 8pt, y: 12pt),
 )
 #counter(page).update(1)
 
@@ -72,7 +69,7 @@
 )
 
 #set par(
-  leading: .8em,
+  leading: .5em,
   // HACK: CJK-style first line indent is still in progress
   // we are currently using JS build tools to solve this
   // issues: https://github.com/typst/typst/issues/311
@@ -83,7 +80,7 @@
 )
 #show raw.where(block: true): set par(justify: false)
 
-#set block(spacing: .8em)
+#set block(spacing: .5em)
 
 #set strong(delta: 0)
 #show strong: set text(
@@ -101,22 +98,22 @@
   font: sans-font,
   weight: 551,
 )
-#show heading.where(level: 1): set text(18pt)
+#show heading.where(level: 1): set text(9pt)
 #show heading.where(level: 2): it => {
-  set text(16pt)
+  set text(8pt)
   v(1em, weak: true)
   align(center, it)
   v(1em, weak: true)
 }
 #show heading.where(level: 3): it => {
-  set text(14pt)
-  v(1em, weak: true)
+  set text(7pt)
+  v(0.5em, weak: true)
   it
-  v(1em, weak: true)
+  v(0.5em, weak: true)
 }
-#show heading.where(level: 4): set text(12pt)
-#show heading.where(level: 5): set text(11pt)
-#show heading.where(level: 6): set text(10pt)
+#show heading.where(level: 4): set text(6pt)
+#show heading.where(level: 5): set text(5.5pt)
+#show heading.where(level: 6): set text(5pt)
 
 #show emph: set text(font: emph-font)
 
@@ -135,11 +132,11 @@
 
 /* BEGIN outline */
 #show outline.entry.where(level: 1): it => {
-  v(2em, weak: true)
-  text(12pt, font: sans-font, it)
+  v(1em, weak: true)
+  text(6pt, font: sans-font, it)
 }
 
-#outline(indent: 2em)
+#outline(indent: 1em)
 /* END outline */
 
 /* BEGIN main */

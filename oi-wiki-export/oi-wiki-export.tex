@@ -1,10 +1,11 @@
-\documentclass[10pt,a4paper,openany]{book}
+\documentclass[5pt,a4paper,openany]{extbook}
 \usepackage[normalem]{ulem}
 \usepackage{xeCJK}
 \usepackage{tocloft}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{unicode-math}
-\usepackage[left=0.6in,right=0.6in,top=0.8in,bottom=0.8in]{geometry}
+\usepackage[left=0.2in,right=0.2in,top=0.3in,bottom=0.3in]{geometry}
+\usepackage{multicol}
 \usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{enumitem}
@@ -34,24 +35,24 @@
 
 \makeatletter
 \renewcommand\section{\@startsection {section}{1}{\z@}%
-                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
-                                   {2.3ex \@plus .2ex}%
-                                   {\normalfont\huge\bfseries}}
+                                   {-2ex \@plus -1ex \@minus -.2ex}%
+                                   {1ex \@plus .2ex}%
+                                   {\normalfont\large\bfseries}}
 \renewcommand\subsection{\@startsection {subsection}{2}{\z@}%
-                                   {-3.25ex \@plus -1ex \@minus -.2ex}%
-                                   {1.5ex \@plus .2ex}%
-                                   {\normalfont\LARGE\bfseries}}
+                                   {-1.5ex \@plus -1ex \@minus -.2ex}%
+                                   {0.8ex \@plus .2ex}%
+                                   {\normalfont\normalsize\bfseries}}
 \renewcommand\subsubsection{\@startsection {subsubsection}{3}{\z@}%
-                                   {-3.25ex \@plus -1ex \@minus -.2ex}%
-                                   {1.5ex \@plus .2ex}%
-                                   {\Large\sffamily}}
+                                   {-1.5ex \@plus -1ex \@minus -.2ex}%
+                                   {0.5ex \@plus .2ex}%
+                                   {\small\sffamily}}
 \renewcommand\paragraph{\@startsection {paragraph}{4}{\z@}%
-                                   {-3.25ex \@plus -1ex \@minus -.2ex}%
-                                   {.75ex}%
-                                   {\large\sffamily}}
+                                   {-1ex \@plus -1ex \@minus -.2ex}%
+                                   {0.3ex}%
+                                   {\footnotesize\sffamily}}
 \renewcommand\subparagraph{\@startsection {subparagraph}{5}{\z@}%
-                                   {-3.25ex \@plus -1ex \@minus -.2ex}%
-                                   {.1ex}%
+                                   {-1ex \@plus -1ex \@minus -.2ex}%
+                                   {0.1ex}%
                                    {\sffamily}}
 
 % because hyperref package will redefine \section, \subsection..., it should be loaded here
@@ -89,7 +90,7 @@
 \title{OI Wiki (Beta)}
 \author{OI Wiki 项目组}
 \date{\today}
-\titleformat{\chapter}[display]{\Huge\bfseries}{第~\thechapter~章}{1em}{}
+\titleformat{\chapter}[display]{\normalfont\large\bfseries}{第~\thechapter~章}{0.5em}{}
 
 % \setmainfont[BoldFont={Noto Serif SemiBold}]{Noto Serif}
 % \setsansfont[BoldFont={Noto Sans SemiBold}]{Noto Sans}
@@ -114,11 +115,13 @@
 \fancyhead[RE]{\small\nouppercase\leftmark\rm}
 \fancyhead[LO]{\small\it\nouppercase\rightmark\rm}
 
-\setlength{\headheight}{12.5pt}
+\setlength{\headheight}{8pt}
+\setlength{\multicolsep}{4pt}
+\setlength{\columnsep}{6pt}
 
-\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=2pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=2pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=2pt}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
 \renewcommand{\contentsname}{目录}
@@ -129,15 +132,9 @@
 % However, this will cause problems in main text graphic positioning
 \newcommand{\includegraphicsEverywhere}[2]{%
     \par
-    \ifinner
-    \begin{figure}[H]
-    \else
-    \begin{figure}[htbp]
-    \fi
-        \centering
-        \includegraphics[max width=0.9\textwidth, max height=0.45\textheight]{{#1}}
-        \caption{#2}
-    \end{figure}
+    \centering
+    \includegraphics[max width=0.9\textwidth, max height=0.45\textheight]{{#1}}
+    \captionof{figure}{#2}
 }
 
 \newmdenv[%
@@ -223,7 +220,7 @@
 \newcommand{\hytt}[1]{\texttt{\hyphenchar\font="200B #1}}
 
 % minted settings
-\setminted{fontsize=\small,backgroundcolor=black!5!white}
+\setminted{fontsize=\small,breaklines,backgroundcolor=black!5!white}
 \newmdenv[%
     roundcorner=5pt,
     linewidth=0pt,
@@ -242,10 +239,10 @@
 }
 
 % customize TOC
-\cftsetpnumwidth{2em}
-\cftsetindents{chapter}{0em}{2em}
-\cftsetindents{section}{2em}{3em}
-\cftsetindents{subsection}{5em}{4em}
+\cftsetpnumwidth{1em}
+\cftsetindents{chapter}{0em}{1.2em}
+\cftsetindents{section}{1.2em}{1.5em}
+\cftsetindents{subsection}{2.7em}{2em}
 
 % image related
 \graphicspath{{images/}}
@@ -265,8 +262,8 @@
 \g@addto@macro{\UrlBreaks}{\UrlDigits}
 
 % metric adjustment
-\renewcommand{\baselinestretch}{1.2}\normalsize % 行距设置
-\setlength{\parskip}{.2\baselineskip}
+\renewcommand{\baselinestretch}{1.05}\normalsize
+\setlength{\parskip}{.1\baselineskip}
 \renewcommand{\headrulewidth}{0mm} % 页眉横线宽度
 \setlength{\parindent}{2em} % 中文缩进两个汉字位
 \setlength{\tabcolsep}{2pt} % 表格列间距 2pt
@@ -300,6 +297,8 @@
     \tableofcontents
     \clearpage
     \mainmatter
+    \begin{multicols}{3}
     \input{includes}
     %\input{test.tex}
+    \end{multicols}
 \end{document}
