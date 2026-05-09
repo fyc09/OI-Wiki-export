@@ -65,6 +65,7 @@ function extractSection(line, section) {
 }
 
 async function processSnippetLine (line, root) {
+  line = line.replace(/\r$/, '')
   const spacesAtStart = line.length - line.trimStart().length
   const spaceString = ' '.repeat(spacesAtStart)
   if (line.trim().startsWith(SNIPPET_TOKEN)) {
