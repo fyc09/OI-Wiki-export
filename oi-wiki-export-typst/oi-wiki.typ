@@ -50,11 +50,6 @@
 /* END imports */
 
 #let page-header = context {
-  let loc = here()
-  let chapter-counter = counter(heading.where(level: 1)).at(loc)
-  if chapter-counter == (0,) {
-    return none
-  }
   text(5pt, number-width: "tabular")[
     #counter(page).display("1")
   ]
