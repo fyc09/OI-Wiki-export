@@ -155,7 +155,7 @@ async function main() {
         } else {
           labelHistory.push(dirName)
           if (depth === 0) {
-            result += '#colbreak()\n'
+            // chapter break handled by columns container
           }
           result += '{0} {1} <{2}>\n'.format('='.repeat(depth + 1), escape(key), dirName)
           if (depth === 0) {
