@@ -21,7 +21,8 @@
 /* BEGIN front cover */
 #set page(
   header: none,
-  paper: (width: 70mm, height: 297mm),
+  width: 70mm,
+  height: 297mm,
   header-ascent: .3in,
   fill: luma(95%),
 )
@@ -59,7 +60,8 @@
 
 #set page(
   fill: none,
-  paper: (width: 70mm, height: 297mm),
+  width: 70mm,
+  height: 297mm,
   margin: (x: 8pt, y: 12pt),
 )
 #counter(page).update(1)
@@ -208,7 +210,8 @@
 
 #set page(
   header: none,
-  paper: (width: 70mm, height: 297mm),
+  width: 70mm,
+  height: 297mm,
   fill: luma(95%),
 )
 
