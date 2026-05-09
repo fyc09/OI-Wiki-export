@@ -69,7 +69,7 @@
       }
     }
 
-    text(9pt, number-width: "tabular")[
+    text(5pt, number-width: "tabular")[
       #emph[
         #counter(heading).display(sect-number)
         #h(1em)
@@ -88,7 +88,7 @@
       return none
     }
 
-    text(9pt, number-width: "tabular")[
+    text(5pt, number-width: "tabular")[
       #counter(page).display("1")
       #h(1fr)
       第#counter(heading.where(level: 1)).display("一")章
@@ -150,7 +150,7 @@
 })
 
 #let links-grid(..content) = {
-  set text(9pt)
+  set text(5pt)
   set par(leading: .5em)
 
   grid(columns: (
@@ -170,7 +170,7 @@
 #let qrcode(arg) = tiaoma.qrcode(arg, width: .9cm)
 
 #let tablex-custom(columns: (), aligns: (), ..cells) = {
-  set text(9pt)
+  set text(5pt)
 
   align(
     center,

@@ -146,7 +146,7 @@
 
 #show heading.where(level: 1): it => {
   set text(
-    25pt,
+    10pt,
     font: serif-font,
     weight: 700,
   )
@@ -170,11 +170,11 @@
 //       of bullet:     778 units
 //       of whitespace: 333 units
 #set list(
-  indent: 2em,
+  indent: 1em,
 )
 #show list: set block(width: 100%)
 #set enum(
-  indent: 2em,
+  indent: 1em,
 )
 #show enum: set block(width: 100%)
 
@@ -195,11 +195,13 @@
 #show ref: set text(fill: cmyk(0%, 100%, 100%, 0%))
 
 #show footnote.entry: it => {
-  set text(9pt)
+  set text(5pt)
   it
 }
 
+#columns(3, gutter: 6pt)[
 #include "includes.typ"
+]
 /* END main */
 
 /* BEGIN back cover */
