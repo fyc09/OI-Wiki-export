@@ -199,9 +199,7 @@
   it
 }
 
-#columns(3, gutter: 6pt)[
 #include "includes.typ"
-]
 /* END main */
 
 /* BEGIN back cover */

@@ -154,13 +154,7 @@ async function main() {
           result += '{0} {1}\n'.format('='.repeat(depth + 1), escape(key))
         } else {
           labelHistory.push(dirName)
-          if (depth === 0) {
-            // chapter break handled by columns container
-          }
           result += '{0} {1} <{2}>\n'.format('='.repeat(depth + 1), escape(key), dirName)
-          if (depth === 0) {
-            // header is managed globally in oi-wiki-export.typ
-          }
         }
 
         for (const id in object[key]) {
