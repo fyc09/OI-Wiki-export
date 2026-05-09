@@ -21,7 +21,7 @@
 /* BEGIN front cover */
 #set page(
   header: none,
-  paper: "a4",
+  paper: (width: 70mm, height: 297mm),
   header-ascent: .3in,
   fill: luma(95%),
 )
@@ -30,16 +30,16 @@
   // OI-Wiki logo
   #image(
     bytes("<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z\"></path></svg>"),
-    height: 4cm,
+    height: 2cm,
   )
   #text(
-    25pt,
+    12pt,
     font: serif-font,
     weight: 700,
   )[OI Wiki (Beta)]
-  #v(4cm)
+  #v(2cm)
   #text(
-    18pt,
+    10pt,
     font: serif-font,
   )[
     OI Wiki 项目组
@@ -59,6 +59,7 @@
 
 #set page(
   fill: none,
+  paper: (width: 70mm, height: 297mm),
   margin: (x: 8pt, y: 12pt),
 )
 #counter(page).update(1)
@@ -207,11 +208,12 @@
 
 #set page(
   header: none,
+  paper: (width: 70mm, height: 297mm),
   fill: luma(95%),
 )
 
 #align(
   center + horizon,
-  text(17pt)[https://oi-wiki.org],
+  text(10pt)[https://oi-wiki.org],
 )
 /* END back cover */
