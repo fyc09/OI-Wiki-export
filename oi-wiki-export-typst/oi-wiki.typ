@@ -14,12 +14,12 @@
     block(
       fill: luma(245),
       stroke: 1pt + luma(245),
-      inset: (top: 4pt, bottom: 4pt),
+      inset: (top: 2pt, bottom: 2pt),
       radius: 4pt,
       width: 100%,
       stack(
         ..it.lines.map(raw_line => block(
-          inset: 3pt,
+          inset: 1.5pt,
           width: 100%,
           stroke: none,
           fill: if calc.rem(raw_line.number, 2) == 0 {
@@ -30,8 +30,8 @@
           grid(
             columns: (1em + 4pt, 1fr),
             align: (right + horizon, left),
-            column-gutter: 0.7em,
-            row-gutter: 0.6em,
+            column-gutter: 0.4em,
+            row-gutter: 0.15em,
             if rlines.contains(raw_line.number) {
               text(highlight_color.darken(89%), [#raw_line.number])
             } else {
